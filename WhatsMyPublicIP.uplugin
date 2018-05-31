@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "What's My Public IP Address",
+	"Description": "Get your public IP address in easy way. C++ and Blueprints",
+	"Category": "Network",
+	"CreatedBy": "Alex Hajdu",
+	"CreatedByURL": "http://www.twitter.com/alexhajdu",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "WhatsMyPublicIP",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
