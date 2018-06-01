@@ -1,27 +1,27 @@
 {
-  "FileVersion": 3,
-  "Version": 1,
-  "VersionName": "1.0",
-  "FriendlyName": "What's My Public IP Address",
-  "Description": "Quickly get your public IP in your C++ or Blueprint project.",
-  "Category": "Network",
-  "CreatedBy": "Alex Hajdu",
-  "CreatedByURL": "http://www.twitter.com/alexhajdu",
-  "DocsURL": "",
-  "MarketplaceURL": "",
-  "SupportURL": "",
-  "EnabledByDefault": true,
-  "CanContainContent": false,
-  "IsBetaVersion": false,
-  "Installed": true,
-  "EngineVersion": "4.19.0",
-  "Modules": [
-    {
-      "Name": "WhatsMyPublicIP",
-      "Type": "Runtime",
-      "LoadingPhase": "Default",
-      "WhitelistPlatforms": [ "Windows", "Android" ],
-      "BlacklistPlatforms": [ "iOS", "MAC" ]
-    }
-  ]
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "What's My Public IP Address",
+	"Description": "Quickly get your public IP in your C++ or Blueprint project.",
+	"Category": "Network",
+	"CreatedBy": "Alex Hajdu",
+	"CreatedByURL": "http://www.twitter.com/alexhajdu",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "4.19.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "WhatsMyPublicIP",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"BlacklistPlatforms": [
+				"IOS",
+				"Mac"
+			]
+		}
+	]
 }
