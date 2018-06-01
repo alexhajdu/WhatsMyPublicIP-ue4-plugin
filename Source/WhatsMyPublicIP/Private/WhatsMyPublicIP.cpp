@@ -52,23 +52,23 @@ void UWhatsMyPublicIP::DoRequest( )
 
 void UWhatsMyPublicIP::OnResponseReceived( FHttpRequestPtr Request, FHttpResponsePtr Response, bool bWasSuccessful )
 {
-	if (bWasSuccessful)
+	if( bWasSuccessful )
 	{
-
 		TSharedPtr< FJsonObject > JsonObject;
 
-		TSharedRef< TJsonReader<> > Reader = TJsonReaderFactory<>::Create(Response->GetContentAsString());
+		TSharedRef< TJsonReader<> > Reader = TJsonReaderFactory<>::Create( Response->GetContentAsString( ) );
 
-		if (FJsonSerializer::Deserialize(Reader, JsonObject))
+		if( FJsonSerializer::Deserialize( Reader, JsonObject ) )
 		{
-			IP = JsonObject->GetStringField("ip");
-			OnIPAddressReceived.Broadcast(GetCachedIP());
+			IP = JsonObject->GetStringField( "ip" );
 		}
 	}
 	else
 	{
 		UE_LOG( LogTemp, Warning, TEXT( "Get My Public IP : Request failed." ) );
 	}
+
+	OnIPAddressReceived.Broadcast( GetCachedIP( ) );
 }
 
 void UWhatsMyPublicIP::OverrideJSONKey( FString NewJsonKey )
