@@ -1,10 +1,11 @@
-# GetMyPublicIP-ue4-plugin
+# WhatsMyPublicIP-ue4-plugin
 
 Quickly get your public IP in your C++ or Blueprint project.
 
 ## Blueprints usage
 
 1. Copy the plugin to [your_project]/Plugins
+
 ![Alt text](HowTo/HowToBP.png?raw=true "Bp")
 
 ## C++ usage
