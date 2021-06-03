@@ -4,7 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#if ENGINE_MAJOR_VERSION == 5 || ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 25
+#include "Containers/UnrealString.h"
+#else
 #include <UnrealString.h>
+#endif // ENGINE_MAJOR_VERSION == 5 || ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 25
+
 #include "Runtime/Online/HTTP/Public/Http.h"
 #include "WhatsMyPublicIP.generated.h"
 
