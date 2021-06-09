@@ -1,9 +1,16 @@
 // Alex Hajdu, (C) 2018, alexhajdu[at]me.com, twitter.com/alexhajdu
 
 #include "WhatsMyPublicIP.h"
+
+#if ENGINE_MAJOR_VERSION == 5 || ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 25
+#include "Dom/JsonObject.h"
+#include "Serialization/JsonSerializer.h"
+#include "Serialization/JsonReader.h"
+#else
 #include <JsonObject.h>
 #include <JsonReader.h>
 #include <JsonSerializer.h>
+#endif //ENGINE_MAJOR_VERSION == 5 || ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 25
 
 UWhatsMyPublicIP::UWhatsMyPublicIP( )
 {
@@ -41,7 +48,11 @@ FString UWhatsMyPublicIP::GetCachedIP( ) const
 
 void UWhatsMyPublicIP::DoRequest( )
 {
-	TSharedRef< IHttpRequest > Request = Http->CreateRequest( );
+#if ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 26 || ENGINE_MAJOR_VERSION >= 5
+		TSharedRef<IHttpRequest, ESPMode::ThreadSafe> Request = Http->CreateRequest();
+#else
+		TSharedRef< IHttpRequest > Request = Http->CreateRequest( );
+#endif
 	Request->OnProcessRequestComplete( ).BindUObject( this, &UWhatsMyPublicIP::OnResponseReceived );
 	Request->SetURL( APIUrl );
 	Request->SetVerb( "GET" );

@@ -1,6 +1,7 @@
 // Alex Hajdu, (C) 2018, alexhajdu[at]me.com, twitter.com/alexhajdu
 
 using UnrealBuildTool;
+using System.IO;
 
 public
 class WhatsMyPublicIP : ModuleRules
@@ -12,13 +13,13 @@ public
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 
 		PublicIncludePaths.AddRange( new string[]{
-			"WhatsMyPublicIP/Public"
+			Path.Combine(ModuleDirectory, "Public")
 			// ... add public include paths required here ...
 		} );
 
 
 		PrivateIncludePaths.AddRange( new string[]{
-			"WhatsMyPublicIP/Private",
+			Path.Combine(ModuleDirectory, "Private"),
 			// ... add other private include paths required here ...
 		} );
 

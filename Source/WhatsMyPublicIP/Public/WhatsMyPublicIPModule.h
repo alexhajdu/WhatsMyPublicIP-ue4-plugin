@@ -3,7 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+#if ENGINE_MAJOR_VERSION == 5 || ENGINE_MAJOR_VERSION == 4 && ENGINE_MINOR_VERSION >= 25
+#include "Modules/ModuleManager.h"
+#else
 #include "ModuleManager.h"
+#endif
 
 class FWhatsMyPublicIPModule : public IModuleInterface
 {
